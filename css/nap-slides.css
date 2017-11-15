@@ -39,7 +39,6 @@ body {
 
 .nobullet {
    list-style: none;
-   margin-left: 0;
    padding-left: 1em;
    text-indent: -1em;
 }
@@ -70,20 +69,19 @@ body {
 /* Everything below is the NAP theming */
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Gill Sans';
     text-align: center;
 }
 
 body {
     -webkit-font-smoothing: antialiased;
-    font-family: 'Gill Sans';
+    font-family: 'Lato';
     font-weight: 200;
 }
 
 h1 {
     font-size: 80px;
-    margin-top: 125px;
-    margin-bottom: 175px;
+    margin-top: 75px;
+    margin-bottom: 75px;
 }
 
 em {
@@ -91,21 +89,18 @@ em {
 }
 
 h2 {
-    font-family: 'Georgia';
     text-transform: uppercase;
+    color: #fff;
+    background-color: #82cb45;
+    font-family: 'Montserrat', cursive;
+    font-weight: 700;
     font-size: 50px;
-    padding-bottom: 20px;
+    padding: 15px;
     margin-bottom: 40px;
-    border-bottom: 1px solid #000;
 }
 
-h2.group-logo {
-    border-bottom: 0;
-}
-
-h2.group-logo .the {
-    font-size: 30px;
-    border-bottom: 1px solid #000
+#logo {
+  width: 400px;
 }
 
 h3 {
@@ -115,9 +110,8 @@ h3 {
 .step {
     position: relative;
 
-    width: 900px;
-    min-height: 700px;
-    padding: 10px;
+    width: 1280px;
+    min-height: 720px;
     margin: 0px auto;
 
     -webkit-box-sizing: border-box;
@@ -136,19 +130,23 @@ section.step {
 }
 
 .step p,ul,pre {
-    margin: 10px 30px;
+    margin: 10px 70px;
     line-height: 50px;
 }
 
 div.step:after {
-    content: 'THE NET-A-PORTER GROUP';
-    font-family: 'Georgia';
+    content: 'Lemon Labs';
+    font-family: 'Montserrat';
     font-size: 25px;
     display: block;
 
-    padding-top: 20px;
+    text-transform: uppercase;
+
+    padding: 15px 0px;
     margin-top: 40px;
-    border-top: 1px solid #000;
+
+    color: #fff;
+    background-color: #82cb45;
 
     position: absolute;
     width: 100%;

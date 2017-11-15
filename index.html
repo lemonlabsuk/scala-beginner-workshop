@@ -3,12 +3,15 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=1024" />
+    <meta name="viewport" content="width=1280" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>NET-A-PORTER Scala Beginner Workshop</title>
-    
-    <meta name="description" content="Let's learn about all those confusing terms used by the Scala and function programming community" />
+    <title>Lemon Labs - Scala Beginner Workshop</title>
+
+    <meta name="description" content="Let's learn Scala" />
     <meta name="author" content="Ian Forsey" />
+
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
     <link href="css/nap-slides.css" rel="stylesheet" />
     <link href="css/idea.css" rel="stylesheet" />
@@ -28,18 +31,16 @@
 </div>
 
 <div id="impress">
-    
+
     <!--
         Slides start here!
     -->
     <section class="step" data-x="0">
-        <h2 class="group-logo">
-            <span class="the">THE</span><br/>NET-A-PORTER<br/>GROUP
-        </h2>
+        <img id="logo" src="images/lemonlabs_logo_full.svg" />
         <h1><em>Scala</em> Beginner Workshop</h1>
         <h3>
-            <a href="http://net-a-porter.github.io/scala-beginner-workshop">
-                net-a-porter.github.io/scala-beginner-workshop
+            <a href="https://lemonlabs.io/training/scala-beginner">
+                lemonlabs.io/training/scala-beginner
             </a>
         </h3>
     </section>
@@ -158,7 +159,7 @@ rating = 0.9</code></pre>
 
     <div class="step" data-x="16500">
         <h2>def (method)</h2>
-        <pre><code class="scala">def success(budget: Int, gross: Int) = 
+        <pre><code class="scala">def success(budget: Int, gross: Int) =
   budget &lt; gross
 
 val r = success(100, 200)
@@ -168,8 +169,8 @@ r == true
 
     <div class="step" data-x="18000">
         <h2>def (method)</h2>
-        <pre><code class="scala">def success(budget: Int, 
-            gross: Int)<span class="codehl">: Boolean</span> = 
+        <pre><code class="scala">def success(budget: Int,
+            gross: Int)<span class="codehl">: Boolean</span> =
   budget &lt; gross
 
 val r = success(100, 200)
@@ -180,7 +181,7 @@ r == true
     <div class="step" data-x="19500">
 
         <h2>def (method)</h2>
-        <pre><code class="scala">def success(budget: Int, 
+        <pre><code class="scala">def success(budget: Int,
             gross: Int) = <span class="codehl">{</span>
   budget &lt; gross
 <span class="codehl">}</span>
@@ -225,8 +226,8 @@ s == Okay
     <div class="step" data-x="24000">
         <h2>Default Parameters</h2>
 
-        <pre><code class="scala">def success(budget: Int, 
-            gross: Int<span class="codehl"> = 50</span>) = 
+        <pre><code class="scala">def success(budget: Int,
+            gross: Int<span class="codehl"> = 50</span>) =
   budget &lt; gross
 
 val r = success(100)
@@ -240,8 +241,8 @@ r == true
     <div class="step" data-x="25500">
         <h2>By Name Parameters</h2>
 
-        <pre><code class="scala">def success(budget: Int = 50, 
-            gross: Int = 50) = 
+        <pre><code class="scala">def success(budget: Int = 50,
+            gross: Int = 50) =
   budget &lt; gross
 
 val r = success(<span class="codehl">budget =</span> 100)
@@ -279,7 +280,7 @@ tom.name
     <div class="step" data-x="31500">
         <h2>Classes</h2>
         <pre><code class="scala">
-class Actor(firstName: String, 
+class Actor(firstName: String,
             surname: String) {
     val name = firstName + " " + surname
 }
@@ -292,7 +293,7 @@ p.name
     <div class="step" data-x="33000">
         <h2>Classes</h2>
         <pre><code class="scala">
-class Actor(firstName: String, 
+class Actor(firstName: String,
             surname: String) {
     def name = firstName + " " + surname
 }
@@ -392,7 +393,7 @@ val funky = (<em>args</em>) => <em>body</em></code></pre>
 
     <div class="step" data-x="46500">
         <h2>Functions</h2>
-        <pre><code class="scala">val success = (budget: Int, gross: Int) => 
+        <pre><code class="scala">val success = (budget: Int, gross: Int) =>
   budget &lt; gross
 
 val r = success(100, 200)
@@ -413,10 +414,10 @@ val tr = Movie("The Room", rating = 3.5)
 
     <div class="step" data-x="49500">
         <h2>Task</h2>
-        <pre><code style="font-size: 30px;" class="scala">val success = 
+        <pre><code style="font-size: 30px;" class="scala">val success =
   (budget: <span class="codehl">Int</span>, gross: <span class="codehl">Int</span>) => budget &lt; gross
 
-val success: <span class="codehl">(Int, Int) => Boolean</span> = 
+val success: <span class="codehl">(Int, Int) => Boolean</span> =
   (budget, gross) => budget &lt; gross
 
 val success: <span class="codehl">(Int, Int) => Boolean</span> =
@@ -442,8 +443,8 @@ val success: <span class="codehl">(Int, Int) => Boolean</span> =
     <div class="step" data-x="54000">
         <h2>Collections</h2>
         <pre><code class="scala">val movies = List(
-  Movie("Jurassic Park", 10.0f), 
-  Movie("The Room", 3.5f), 
+  Movie("Jurassic Park", 10.0f),
+  Movie("The Room", 3.5f),
   Movie("Home Alone", 7.4f)
 )
 
@@ -452,7 +453,7 @@ movies: List[Movie] = List(Movie(...</code></pre>
 
     <div class="step" data-x="55500">
         <h2>Collections</h2>
-        <pre><code class="scala">val movies = 
+        <pre><code class="scala">val movies =
   Movie("Jurassic Park", 10.0f) ::
   Movie("The Room", 3.5f) ::
   Movie("Home Alone", 7.4f) :: Nil
@@ -475,7 +476,7 @@ movies: List[Movie] = List(Movie(...</code></pre>
         <h2>Collections</h2>
         <pre><code class="scala">movies.filter(greatFilm)</code></pre>
         <pre class="fadedcode">List(
-  Movie(Jurassic Park,10.0), 
+  Movie(Jurassic Park,10.0),
   Movie(Home Alone,7.4))
 
 </pre>
@@ -493,8 +494,8 @@ movies: List[Movie] = List(Movie(...</code></pre>
 
         <pre><code class="scala">movies.map(_.name)</code></pre>
         <pre class="fadedcode">res: List[String] = List(
-  Jurassic Park, 
-  The Room, 
+  Jurassic Park,
+  The Room,
   Home Alone)</pre>
     </div>
 
@@ -513,8 +514,8 @@ val chars = List("Maverick", "Iceman", "Goose")
 actor zip chars</code></pre>
 
         <pre class="fadedcode">res15: List[(String, String)] = List(
-  (Tom,Maverick), 
-  (Val,Iceman), 
+  (Tom,Maverick),
+  (Val,Iceman),
   (Anthony,Goose))</pre>
     </div>
 
@@ -527,7 +528,7 @@ actor zip chars</code></pre>
         <pre><code class="scala" style="font-size:30px; line-height:40px;">case class Movie(genre: String, gross: Int)
 
 val movies = (100 to 5000 by 50).flatMap(g =>
-  Movie("Drama", g) :: Movie("Romcom", g) :: 
+  Movie("Drama", g) :: Movie("Romcom", g) ::
   Movie("Action", g) :: Nil)
 
 </code></pre>
@@ -548,15 +549,15 @@ val movies = (100 to 5000 by 50).flatMap(g =>
   map(_.gross).
   sum
 
-val res = movies.collect { 
+val res = movies.collect {
   case Movie("Action", gross) => gross
 }.sum</code></pre>
     </div>
 
     <div class="step" data-x="69000">
         <h2>Functions again</h2>
-        <pre><code class="scala">movies.map <span class="yhl">(movie => 
-  if(movie.score &lt; 4) "Flop" 
+        <pre><code class="scala">movies.map <span class="yhl">(movie =>
+  if(movie.score &lt; 4) "Flop"
   else "Blockbuster"
 )</span>
 
@@ -567,8 +568,8 @@ movies.collect <span class="yhl">{
 
     <div class="step" data-x="70500">
         <h2>Functions again</h2>
-        <pre><code class="scala">movies.map (movie => 
-  if(movie.score &lt; 4) "Flop" 
+        <pre><code class="scala">movies.map (movie =>
+  if(movie.score &lt; 4) "Flop"
   else "Blockbuster"
 )
 
@@ -580,8 +581,8 @@ movies.collect {
 
     <div class="step" data-x="72000">
         <h2>Functions again</h2>
-        <pre><code class="scala">movies.map (movie => 
-  if(movie.score &lt; 4) "Flop" 
+        <pre><code class="scala">movies.map (movie =>
+  if(movie.score &lt; 4) "Flop"
   else "Blockbuster"
 )
 
@@ -600,7 +601,7 @@ movies.map {
             <li>Doesn’t have to handle all possible values</li>
         </ul>
         <pre><code class="scala">val f: Int => String = {
-  case 0 => "zero!" 
+  case 0 => "zero!"
   case 1 => "one!"
 }</code></pre>
         <p style="margin-top:20px; text-align:center; font-style: italic;">What happens if we call this with the argument 3?</p>
@@ -680,19 +681,19 @@ Rating(1, Some("So awful")).asString
 
     <div class="step" data-x="85500">
         <h2>Some Solutions</h2>
-        <pre><code class="scala" style="font-size:30px; line-height:40px;">def asString = 
-  stars + "* " + 
+        <pre><code class="scala" style="font-size:30px; line-height:40px;">def asString =
+  stars + "* " +
   comment.map("[comment:" + _ + "]").
   getOrElse("[no comment]")
 
-def asString = 
+def asString =
   stars + "* " + (
-  if(comment.nonEmpty) "[comment:" + comment.get + "]" 
+  if(comment.nonEmpty) "[comment:" + comment.get + "]"
   else "[no comment]")
 
-def asString = stars + "* " + (comment match { 
-  case Some(c) => s"[comment:$c]" 
-  case None => "[no comment]" 
+def asString = stars + "* " + (comment match {
+  case Some(c) => s"[comment:$c]"
+  case None => "[no comment]"
 })
 
 </code></pre>
@@ -738,13 +739,13 @@ val spielbergCast = movies.collect {
 
     <div class="step" data-x="93000">
         <h2>Traits</h2>
-        <pre><code class="scala">case class Award(name: String, 
+        <pre><code class="scala">case class Award(name: String,
                  outcome: String)
 // outcome is "Won" or "Nominated"
 
 trait Person {
   def awards: List[Award]
-  def awardsWon = 
+  def awardsWon =
     prods.filter(_.outcome == "Won")
 }</code></pre>
     </div>
@@ -791,8 +792,8 @@ case class TvShow(series: List[Series])
         <pre><code class="scala" style="font-size:28px; line-height:38px;">trait Production { def releaseYear: Int }
 case class Film(releaseYear: Int) extends Production
 
-case class TvShow(series: List[Series]) { 
-  def releaseYear = series.sortBy(_.year).head.year 
+case class TvShow(series: List[Series]) {
+  def releaseYear = series.sortBy(_.year).head.year
 }
 val thirtyRock = new TvShow(
   Series(2011) :: Series(2012) :: Nil
@@ -880,7 +881,7 @@ case class HttpHeader (
     <div class="step" data-x="112500">
         <h2>Implicit conversions</h2>
         <pre><code class="scala" style="font-size:30px; line-height:40px;">implicit class PimpedHttpRequest(r: HttpRequest) {
-  def headerValue(name: String) = 
+  def headerValue(name: String) =
     r.headers.find(_.name == name)
 }
 
@@ -935,7 +936,7 @@ Seq("22", "2", "11", "1").sorted
         <pre><code class="scala">case class Film(year: Int)
 
 implicit val filmOrd = new Ordering[Film] {
-  def compare(x: Film, y: Film) = 
+  def compare(x: Film, y: Film) =
     x.year.compareTo(y.year)
 }
 
@@ -960,12 +961,12 @@ films.sorted(false)
     <div class="step" data-x="123000" style="font-size:30px; line-height:40px;">
         <h2>Implicit Parameters</h2>
         <pre><code class="scala">implicit val movieOrd = new Ordering[Film] {
-  def compare(x: Film, y: Film) = 
+  def compare(x: Film, y: Film) =
     x.year.compareTo(y.year)
 }
 
 implicit object FilmOrd extends Ordering[Film] {
-  def compare(x: Film, y: Film) = 
+  def compare(x: Film, y: Film) =
     x.year.compareTo(y.year)
 }
 </code></pre>
