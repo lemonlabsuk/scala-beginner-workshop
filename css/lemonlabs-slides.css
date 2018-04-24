@@ -77,12 +77,12 @@ body {
     font-family: 'Lato';
     font-weight: 200;
     color: #373f31;
-    background-color: #82cb45;
+    background-color: #7ac33d;
 }
 
 a, a:hover, a:focus, a:active, a.active {
   outline: 0;
-  color: #82cb45;
+  color: #7ac33d;
   text-decoration: none;
 }
 
@@ -96,7 +96,7 @@ h1 {
   padding: 5px 15px;
   border-radius: 10px;
   color: #fff;
-  background-color: #82cb45;
+  background-color: #7ac33d;
   margin-left: 8px;
   font-size: 21px;
   margin-right: 10px;
@@ -107,7 +107,7 @@ h1 {
   margin: 40px;
   font-size: 35px;
   margin-top: 65px;
-  color: #82cb45;
+  color: #7ac33d;
 }
 
 em {
@@ -118,7 +118,7 @@ h2 {
   text-transform: uppercase;
   color: #fff;
   font-family: 'Montserrat', cursive;
-  background-color: #82cb45;
+  background-color: #7ac33d;
   font-weight: 700;
   font-size: 50px;
   padding-bottom: 28px;
@@ -165,18 +165,23 @@ h3 {
 }
 
 .step header {
-  background-color: #82cb45;
+  background-color: #7ac33d;
 }
 
 .step .step-content {
     margin: 0 500px;
 }
 
+section.title {
+    padding-top: 265px;
+}
+
 section.step {
-  min-height: 0px;
   text-align: center;
   font-size: 50px;
-  padding: 65px;
+  margin-top: 40px;
+  min-height: 645px;
+  padding-top: 50px;
 }
 
 .step p,ul,pre,ol {
@@ -184,21 +189,20 @@ section.step {
   line-height: 50px;
 }
 
-.step li {
+.step ul li {
   margin: 20px;
+}
+
+.step ul ul li {
+    margin: 10px;
+}
+
+.step ul ul ul li {
+    margin: 0px;
 }
 
 .step li img {
   vertical-align: bottom;
-}
-
-.step span {
-  background-color: #f5f8ee;
-  color: #777;
-  border: #eee 1px solid;
-  padding: 7px 10px;
-  font-size: 25px;
-  border-radius: 5px;
 }
 
 strong {
@@ -225,7 +229,7 @@ strong {
   margin-bottom: 50px;
 }
 
-div.step:after {
+step:after {
   content: '';
   font-family: 'Montserrat';
   font-size: 25px;
@@ -236,7 +240,7 @@ div.step:after {
   margin-top: 40px;
 
   color: #fff;
-  background-color: #82cb45;
+  background-color: #7ac33d;
 
   position: absolute;
   width: 100%;
