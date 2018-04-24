@@ -1,4 +1,4 @@
-val X_OFFSET = 1500
+val X_OFFSET = 2000
 
 val lines = scala.io.Source.fromFile("index.html").getLines.toSeq
 val numOfSlides = lines.count(_ contains "data-x=")
