@@ -43,6 +43,22 @@ body {
    text-indent: -1em;
 }
 
+.nobullet li:before {
+    display: inline-block;
+    width: 1.2em;
+    text-align: center;
+}
+
+li.plus-bullet:before {
+    content: "+";
+    color: #2b2;
+}
+
+li.neg-bullet:before {
+    content: "–";
+    color: #b22;
+}
+
 /* Fallback message for clients that don't support impress */
 
 .fallback-message {
@@ -181,7 +197,7 @@ section.step {
   font-size: 50px;
   margin-top: 40px;
   min-height: 645px;
-  padding-top: 50px;
+  padding-top: 250px;
 }
 
 .step p,ul,pre,ol {

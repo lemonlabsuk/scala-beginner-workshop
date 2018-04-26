@@ -116,8 +116,8 @@
             </ul>
             <li>Immutability first</li>
             <ul>
-                <li>Use val by default</li>
-                <li>Only use var when necessary</li>
+                <li>Use <span class="keyword">val</span> by default</li>
+                <li>Rarely need to use <span class="keyword">var</span></li>
             </ul>
         </ul>
         </div>
@@ -144,16 +144,12 @@ rating = 0.9
         <h2>Task</h2>
         <div class="step-content">
         <ul>
-            <li>Assign "Jaws" to a val title</li>
-            <li>Assign 402 to a var gross</li>
+            <li>Assign <span class="string">"Jaws"</span> to a <span class="keyword">val</span> title</li>
+            <li>Assign <span class="number">402</span> to a <span class="keyword">var</span> gross</li>
             <li>Assign a new value to title and gross</li>
         </ul>
         </div>
     </div>
-
-    <section class="step" data-x="16000">
-        <img src="images/valyuno.jpg" style="height:550px;" />
-    </section>
 
     <div class="step" data-x="18000">
         <h2>Examples</h2>
@@ -178,11 +174,10 @@ rating = 0.9</code></pre>
     <div class="step" data-x="22000">
         <h2>def (method)</h2>
         <div class="step-content">
-        <pre><code class="scala">def success(budget: Int, gross: Int) =
-  budget &lt; gross
+        <pre><code class="scala">def movieProfit(cost: Int, gross: Int) =
+  gross - cost
 
-val r = success(100, 200)
-r == true
+movieProfit(100, 200)
         </code></pre>
         </div>
     </div>
@@ -190,12 +185,11 @@ r == true
     <div class="step" data-x="24000">
         <h2>def (method)</h2>
         <div class="step-content">
-        <pre><code class="scala">def success(budget: Int,
+        <pre><code class="scala">def movieProfit(cost: Int,
             gross: Int)<span class="codehl">: Boolean</span> =
-  budget &lt; gross
+  gross - cost
 
-val r = success(100, 200)
-r == true
+movieProfit(100, 200)
         </code></pre>
         </div>
     </div>
@@ -204,13 +198,14 @@ r == true
 
         <h2>def (method)</h2>
         <div class="step-content">
-        <pre><code class="scala">def success(budget: Int,
+        <pre><code class="scala">def movieProfit(cost: Int,
             gross: Int) = <span class="codehl">{</span>
-  budget &lt; gross
+  val profit = gross - cost
+  println(s"Movie made $profit profit")
+  profit
 <span class="codehl">}</span>
 
-val r = success(100, 200)
-r == true
+movieProfit(100, 200)
         </code></pre>
         </div>
     </div>
@@ -221,17 +216,17 @@ r == true
         <ul>
             <li>Write a method called simpleRating</li>
             <ul>
-                <li>it takes a Double argument called rating</li>
-                <li>returns <span class="string">Excellent</span> when rating is greater than <span class="number">8</span></li>
-                <li>returns <span class="string">Okay</span> when rating is between <span class="number">4</span> and <span class="number">8</span></li>
-                <li>otherwise returns <span class="string">Poor</span></li>
+                <li>it takes a <code>Double</code> argument called rating</li>
+                <li>returns <span class="string">"Excellent"</span> when rating is greater than <span class="number">8</span></li>
+                <li>returns <span class="string">"Okay"</span> when rating is between <span class="number">4</span> and <span class="number">8</span></li>
+                <li>otherwise returns <span class="string">"Poor"</span></li>
             </ul>
             <li>
-                If statement Syntax:
+                <span class="keyword">if</span> expression syntax:
                 <pre><code class="scala">if ( <em>expr</em> ) <em>a</em> else if( <em>expr</em> ) <em>b</em> else <em>c</em></code></pre>
             </li>
             <li>
-                Equality check with ==
+                Equality check with <code>==</code>
             </li>
         </ul>
         </div>
@@ -245,8 +240,7 @@ r == true
   else if(rating &gt; 4.0) "Okay"
   else "Poor"
 
-val s = simpleRating(5.0)
-s == Okay
+simpleRating(5.0)
         </code></pre>
         </div>
     </div>
@@ -255,15 +249,14 @@ s == Okay
         <h2>Default Parameters</h2>
         <div class="step-content">
 
-        <pre><code class="scala">def success(budget: Int,
-            gross: Int<span class="codehl"> = 50</span>) =
-  budget &lt; gross
+        <pre><code class="scala">def numStars(rating: Double,
+            maxStars: Int <span class="codehl">= 10</span>): Int = {
+  require(rating &gt;= 0.0 && rating &lt;= 1.0)
+  math.round(rating * maxStars)
+}
 
-val r = success(100)
-r == false
-
-val r = success(100, 200)
-r == true
+numStars(0.75)
+numStars(0.75, 5)
         </code></pre>
         </div>
     </div>
@@ -272,12 +265,19 @@ r == true
         <h2>By Name Parameters</h2>
         <div class="step-content">
 
-        <pre><code class="scala">def success(budget: Int = 50,
-            gross: Int = 50) =
-  budget &lt; gross
+        <pre><code class="scala" style="font-size:36px; line-height:42px;">def numStars(rating: Double,
+            maxStars: Int = 10,
+            halfStars: Boolean = false): Double = {
+  require(rating &gt;= 0.0 && rating &lt;= 1.0)
+  if(halfStars)
+    math.round(rating * 2.0 * maxStars) / 2.0
+  else
+    math.round(rating * maxStars)
+}
 
-val r = success(<span class="codehl">budget =</span> 100)
-r == false
+numStars(0.75, <span class="codehl">maxStars = 5</span>)
+numStars(0.75, <span class="codehl">halfStars = true</span>)
+numStars(<span class="codehl">rating = 0.75</span>)
         </code></pre>
         </div>
     </div>
@@ -299,20 +299,6 @@ val tom = new Actor("Tom", "Hanks")
         </div>
     </div>
 
-    <div class="step" data-x="40000">
-        <h2>Classes</h2>
-        <div class="step-content">
-        <pre><code class="scala">
-
-class Actor(firstName: String,
-            surname: String)
-
-val tom = new Actor("Tom", "Hanks")
-tom.name
-        </code></pre>
-        </div>
-    </div>
-
     <div class="step" data-x="42000">
         <h2>Classes</h2>
         <div class="step-content">
@@ -323,7 +309,7 @@ class Actor(firstName: String,
 }
 
 val tom = new Actor("Tom", "Hanks")
-p.name
+tom.name
         </code></pre>
         </div>
     </div>
@@ -338,7 +324,21 @@ class Actor(firstName: String,
 }
 
 val tom = new Actor("Tom", "Hanks")
-p.name
+tom.name
+        </code></pre>
+        </div>
+    </div>
+
+    <div class="step" data-x="44000">
+        <h2>Classes</h2>
+        <div class="step-content">
+        <pre><code class="scala">
+class Actor(<span class="codehl">val</span> firstName: String,
+            <span class="codehl">val</span> surname: String)
+
+val tom = new Actor("Tom", "Hanks")
+tom.firstName
+tom.surname
         </code></pre>
         </div>
     </div>
@@ -350,12 +350,11 @@ p.name
                  surname: String)
 </code></pre>
     <ul class="nobullet">
-        <li>+ All fields made vals (public)</li>
-        <li>+ Factory method (no new keyword)</li>
-        <li>+ equals and hashcode</li>
-        <li>+ Pretty toString</li>
-        <li>– Case-to-case class inheritance is <a href="http://stackoverflow.com/questions/11158929/what-is-so-wrong-with-case-class-inheritance">prohibited</a></li>
-        <li>+ And ...</li>
+        <li class="plus-bullet">All fields made <span class="keyword">val</span>s (public)</li>
+        <li class="plus-bullet">Factory method (no <span class="keyword">new</span> keyword)</li>
+        <li class="plus-bullet"><code>==</code> and <code>hashcode</code> method</li>
+        <li class="plus-bullet">Pretty <code>toString</code> method</li>
+        <li class="neg-bullet">Case-to-case class inheritance is <a href="http://stackoverflow.com/questions/11158929/what-is-so-wrong-with-case-class-inheritance">prohibited</a></li>
     </ul>
         </div>
     </div>
@@ -377,27 +376,30 @@ tom2.surname == "Cruise"</code></pre>
         <pre><code class="scala">val m = Movie(certificate = "U")
 
 val ageRequirement = p match {
-  case Movie("U" | "PG") =>   0
-  case Movie("12A") =>        18
-  case Movie(cert) =>         cert.toInt
+  case Movie("U" | "PG") => 0
+  case Movie("12A")      => 18
+  case Movie(cert)       => cert.toInt
 }</code></pre>
         </div>
     </div>
 
     <div class="step" data-x="52000">
         <h2>Task</h2>
-        <div class="step-content">
+        <div class="step-content" style="font-size:30px; line-height:40px;">
         <ul>
-            <li>Write a <span class="keywork">case class</span> called Movie</li>
+            <li>Create a <span class="keyword">case class</span> called <code>Movie</code></li>
             <ul>
-                <li>With an Int constructor arg called <em>year</em></li>
-                <li>and an Int constructor arg called <em>gross</em></li>
-                <li>a Double constructor arg called <em>rating</em></li>
-                <li>and a method called badge that returns</li>
+                <li>With a primary constructor containing</li>
                 <ul>
-                    <li><span class="string">Golden Oldie</span> if the year &lt; 1960</li>
-                    <li><span class="string">Blockbuster</span> if the gross &gt; 20 and rating &gt; 7</li>
-                    <li><span class="string">Must see</span> otherwise</li>
+                    <li>an <code>Int</code> arg called <code>year</code></li>
+                    <li>an <code>Int</code> arg called <code>gross</code></li>
+                    <li>a <code>Double</code> arg called <code>rating</code></li>
+                </ul>
+                <li>and a method called <code>badge</code> that returns</li>
+                <ul>
+                    <li><span class="string">"Golden Oldie"</span> if the <code>year</code> &lt; <span class="number">1960</span></li>
+                    <li><span class="string">"Blockbuster"</span> if the <code>gross</code> &gt; <span class="number">20</span> and <code>rating</code> &gt; <span class="number">7.0</span></li>
+                    <li><span class="string">"Must see"</span> otherwise</li>
                 </ul>
             </ul>
         </ul>
@@ -410,18 +412,16 @@ val ageRequirement = p match {
         <div class="step-content">
         <pre><code class="scala">case class Actor(name: String) {
   def +(other: Actor) =
-    Actor(name + other.name)
+    List(this, other)
 }
 
-Actor("Brad").+(Actor("Angelina"))
-Actor("Brad") +(Actor("Angelina"))
 Actor("Brad") + Actor("Angelina")</code></pre>
         </div>
     </div>
 
     <section class="step" style="padding-top:100px" data-x="56000">
         <img src="images/nodocs.jpg" />
-        <img src="images/fuuu.jpg" />
+        <img src="images/tableflip.jpg" height="367" style="padding-left: 50px;"/>
     </section>
 
     <section class="step title" data-x="58000">
@@ -454,7 +454,7 @@ val r = success.apply(100, 200)</code></pre>
     <div class="step" data-x="64000">
         <h2>Task</h2>
         <div class="step-content">
-        <pre><code class="scala">case class Movie(name: String, rating: Float)
+        <pre><code class="scala">case class Movie(name: String, rating: Double)
 val kb = Movie("Kill Bill", rating = 8.2)
 val tr = Movie("The Room", rating = 3.5)
 > greatFilm(kb) == true
