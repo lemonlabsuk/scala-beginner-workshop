@@ -86,20 +86,20 @@
         <h2>Agenda</h2>
         <div class="step-content">
         <ul>
-            <li>vals and vars</li>
-            <li>methods</li>
-            <li>classes and case classes</li>
+            <li><span class="keyword">val</span> and <span class="keyword">var</span></li>
+            <li><span class="keyword">def</span></li>
+            <li><span class="keyword">class</span> and <span class="keyword">case class</span></li>
             <li>functions</li>
             <li>collections and options</li>
-            <li>traits</li>
-            <li>objects</li>
-            <li>implicits</li>
+            <li><span class="keyword">trait</span></li>
+            <li><span class="keyword">object</span></li>
+            <li><span class="keyword">implicit</span></li>
         </ul>
         </div>
     </div>
 
     <section class="step title" data-x="8000">
-        vals and vars
+        <span class="keyword">val</span> and <span class="keyword">var</span>
     </section>
 
     <div class="step" data-x="10000">
@@ -168,7 +168,7 @@ rating = 0.9</code></pre>
     </div>
 
     <section class="step title" data-x="18000">
-        methods
+        <span class="keyword">def</span>
     </section>
 
     <div class="step" data-x="20000">
@@ -185,8 +185,7 @@ movieProfit(100, 200)
     <div class="step" data-x="22000">
         <h2>def (method)</h2>
         <div class="step-content">
-        <pre><code class="scala">def movieProfit(cost: Int,
-            gross: Int)<span class="codehl">: Boolean</span> =
+        <pre><code class="scala">def movieProfit(cost: Int, gross: Int)<span class="codehl">: Boolean</span> =
   gross - cost
 
 movieProfit(100, 200)
@@ -198,8 +197,7 @@ movieProfit(100, 200)
 
         <h2>def (method)</h2>
         <div class="step-content">
-        <pre><code class="scala">def movieProfit(cost: Int,
-            gross: Int) = <span class="codehl">{</span>
+        <pre><code class="scala">def movieProfit(cost: Int, gross: Int) = <span class="codehl">{</span>
   val profit = gross - cost
   println(s"Movie made $profit profit")
   profit
@@ -283,7 +281,7 @@ numStars(<span class="codehl">rating = 0.75</span>)
     </div>
 
     <section class="step title" data-x="34000">
-        classes
+        <span class="keyword">class</span>
     </section>
 
     <div class="step" data-x="36000">
@@ -824,7 +822,7 @@ val spielbergCast = genreOption.map { genre =>
     </div>
 
     <section class="step title" data-x="118000">
-        Traits
+        <span class="keyword">trait</span>
     </section>
 
     <div class="step" data-x="120000">
@@ -918,7 +916,7 @@ res2: Int = 2011
     </div>
 
     <section class="step title" data-x="132000">
-        Objects
+        <span class="keyword">object</span>
     </section>
 
     <div class="step" data-x="134000">
@@ -974,7 +972,7 @@ val msg = award match {
     </div>
 
     <section class="step title" data-x="142000">
-        Implicits
+        <span class="keyword">implicit</span>
     </section>
 
     <div class="step" data-x="144000">
